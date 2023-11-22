@@ -70,7 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 btn_add.addEventListener("click", () => {
   let content = crear_lista(input_text);
   let array_local_db = getDataFromLocal();
-  array_local_db.push(content);
+  
+  if(content!=undefined){
+  (array_local_db.push(content));
   window.localStorage.setItem("array", JSON.stringify(array_local_db));
+  }
+  
   event.preventDefault();
 });
